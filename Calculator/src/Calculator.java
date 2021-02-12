@@ -1,7 +1,9 @@
 public class Calculator {
 
 	public int add(String stringOfNumbers) {
-		return 0;
+		if(stringOfNumbers.equals(""))
+			return 0;
+		return Integer.parseInt(stringOfNumbers);
 	}
 	
 }
