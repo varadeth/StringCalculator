@@ -9,5 +9,11 @@ public class CalculatorTests {
 		Calculator calculator = new Calculator();
 		assertEquals(0, calculator.add(""));
 	}
+	
+	@Test
+	public void additionWithOneNumber() {
+		Calculator calculator = new Calculator();
+		assertEquals(1, calculator.add("1"));
+	}
 
 }
