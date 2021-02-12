@@ -15,6 +15,12 @@ public class CalculatorTests {
 		Calculator calculator = createCalculator();
 		assertEquals(1, calculator.add("1"));
 	}
+	
+	@Test
+	public void additionWithTwoNumber() {
+		Calculator calculator = createCalculator();
+		assertEquals(5, calculator.add("2,3"));
+	}
 
 	private Calculator createCalculator() {
 		return new Calculator();
