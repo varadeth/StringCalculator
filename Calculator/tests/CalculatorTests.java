@@ -38,6 +38,10 @@ public class CalculatorTests {
 		assertEquals(21, calculator.add("1,2,3,4,5,6"));
 	}
 
+	@Test
+	public void additionWithAnotherDelimiter() {
+		assertEquals(5, calculator.add("2\n3"));
+	}
 	@After()
 	public void tearDown() {
 		calculator = null;
