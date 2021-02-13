@@ -5,11 +5,8 @@ public class Calculator {
 	public int add(String stringOfNumbers) {
 		if(stringOfNumbers.equals(""))
 			return 0;
-		if(stringOfNumbers.contains(",") || stringOfNumbers.contains("\n")) {
-			int[] numbers = convertToIntArray(stringOfNumbers);
-			return this.sumOfNumbers(numbers);
-		}
-		return 1;
+		int[] numbers = convertToIntArray(stringOfNumbers);
+		return this.sumOfNumbers(numbers);
 	}
 
 	private int[] convertToIntArray(String stringOfNumbers) {
