@@ -42,6 +42,12 @@ public class CalculatorTests {
 	public void additionWithAnotherDelimiter() {
 		assertEquals(5, calculator.add("2\n3"));
 	}
+	
+	@Test
+	public void additionWithCommaAndNewlineDelimiter() {
+		assertEquals(6, calculator.add("1,2\n3"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
