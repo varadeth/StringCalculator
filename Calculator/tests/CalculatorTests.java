@@ -32,6 +32,11 @@ public class CalculatorTests {
 	public void additionWithThreeNumber() {
 		assertEquals(12, calculator.add("3,4,5"));
 	}
+	
+	@Test
+	public void additionWithAnyNumber() {
+		assertEquals(21, calculator.add("1,2,3,4,5,6"));
+	}
 
 	@After()
 	public void tearDown() {
