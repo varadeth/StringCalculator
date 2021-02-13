@@ -6,9 +6,18 @@ public class Calculator {
 		if(stringOfNumbers.equals(""))
 			return 0;
 		if(stringOfNumbers.contains(",")) {
-			String[] numbers = stringOfNumbers.split(",");
-			return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+			String[] tokens = stringOfNumbers.split(",");
+			int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
+			return this.sumOfNumbers(numbers);
 		}
 		return 1;
+	}
+	
+	public int sumOfNumbers(int[] numbers) {
+		int sum = 0;
+		for(int number: numbers) {
+			sum += number;
+		}
+		return sum;
 	}
 }
