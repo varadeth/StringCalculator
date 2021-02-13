@@ -6,11 +6,16 @@ public class Calculator {
 		if(stringOfNumbers.equals(""))
 			return 0;
 		if(stringOfNumbers.contains(",")) {
-			String[] tokens = stringOfNumbers.split(",");
-			int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
+			int[] numbers = convertToIntArray(stringOfNumbers);
 			return this.sumOfNumbers(numbers);
 		}
 		return 1;
+	}
+
+	private int[] convertToIntArray(String stringOfNumbers) {
+		String[] tokens = stringOfNumbers.split(",");
+		int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
+		return numbers;
 	}
 	
 	public int sumOfNumbers(int[] numbers) {
