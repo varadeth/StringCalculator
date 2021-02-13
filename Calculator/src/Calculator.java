@@ -5,7 +5,7 @@ public class Calculator {
 	public int add(String stringOfNumbers) {
 		if(stringOfNumbers.equals(""))
 			return 0;
-		if(stringOfNumbers.contains(",")) {
+		if(stringOfNumbers.contains(",") || stringOfNumbers.contains("\n")) {
 			int[] numbers = convertToIntArray(stringOfNumbers);
 			return this.sumOfNumbers(numbers);
 		}
@@ -13,7 +13,7 @@ public class Calculator {
 	}
 
 	private int[] convertToIntArray(String stringOfNumbers) {
-		String[] tokens = stringOfNumbers.split(",");
+		String[] tokens = stringOfNumbers.split(",|\n");
 		int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
 		return numbers;
 	}
