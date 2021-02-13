@@ -21,6 +21,12 @@ public class CalculatorTests {
 		Calculator calculator = createCalculator();
 		assertEquals(5, calculator.add("2,3"));
 	}
+	
+	@Test
+	public void additionWithThreeNumber() {
+		Calculator calculator = createCalculator();
+		assertEquals(12, calculator.add("3,4,5"));
+	}
 
 	private Calculator createCalculator() {
 		return new Calculator();
