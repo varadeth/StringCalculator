@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,6 +10,15 @@ public class Calculator {
 		if(stringOfNumbers.equals(""))
 			return 0;
 		int[] numbers = convertToIntArray(stringOfNumbers);
+		String negetiveNumbers = "";
+		for(int x : numbers) {
+			if(x < 0) {
+				negetiveNumbers += x + " ";
+			}
+		}
+		if(!negetiveNumbers.equals("")) {
+			throw new RuntimeException("Negetive number not allowed : " + negetiveNumbers);
+		}
 		return this.sumOfNumbers(numbers);
 	}
 
