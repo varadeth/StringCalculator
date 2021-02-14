@@ -48,6 +48,11 @@ public class CalculatorTests {
 		assertEquals(6, calculator.add("1,2\n3"));
 	}
 	
+	@Test
+	public void additionWithCustomDelimiter() {
+		assertEquals(10, calculator.add("//;\n1;9"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
