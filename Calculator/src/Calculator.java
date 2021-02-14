@@ -32,24 +32,33 @@ public class Calculator {
 
 	private String[] getStringTokens(String stringOfNumbers) {
 		if(stringOfNumbers.startsWith("//[")) {
-			String delimiter = getDelimiter(stringOfNumbers);
-			String numbers = stringOfNumbers.substring(5 + delimiter.length());
-			while(numbers.contains(delimiter)) {
-				numbers = numbers.replace(delimiter, "#");
-			}
-			return numbers.split("#");
+			return tokensFromAnyLengthDelimiter(stringOfNumbers);
 		}
 		if(stringOfNumbers.startsWith("//")) {
-			Pattern pattern = Pattern.compile("//(.)\n(.*)");
-			Matcher match = pattern.matcher(stringOfNumbers);
-			if(match.matches()) {
-				String customDelimiter = match.group(1);
-				String listOfNumbers = match.group(2);
-				return listOfNumbers.split(customDelimiter);
-			}
+			return tokenFromAnyDelimiter(stringOfNumbers);
 		}
 		String[] tokens = stringOfNumbers.split(",|\n");
 		return tokens;
+	}
+
+	private String[] tokensFromAnyLengthDelimiter(String stringOfNumbers) {
+		String delimiter = getDelimiter(stringOfNumbers);
+		String numbers = stringOfNumbers.substring(5 + delimiter.length());
+		while(numbers.contains(delimiter)) {
+			numbers = numbers.replace(delimiter, "#");
+		}
+		return numbers.split("#");
+	}
+
+	private String[] tokenFromAnyDelimiter(String stringOfNumbers) {
+		Pattern pattern = Pattern.compile("//(.)\n(.*)");
+		Matcher match = pattern.matcher(stringOfNumbers);
+		if(match.matches()) {
+			String customDelimiter = match.group(1);
+			String listOfNumbers = match.group(2);
+			return listOfNumbers.split(customDelimiter);
+		}
+		return new String[] {""};
 	}
 	
 	private String getDelimiter(String numbers) {
