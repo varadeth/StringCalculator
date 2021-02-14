@@ -12,18 +12,23 @@ public class Calculator {
 	}
 
 	private int[] convertToIntArray(String stringOfNumbers) {
+		String[] tokens = getStringTokens(stringOfNumbers);
+		int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
+		return numbers;
+	}
+
+	private String[] getStringTokens(String stringOfNumbers) {
 		if(stringOfNumbers.startsWith("//")) {
 			Pattern pattern = Pattern.compile("//(.)\n(.*)");
 			Matcher match = pattern.matcher(stringOfNumbers);
 			if(match.matches()) {
 				String customDelimiter = match.group(1);
 				String listOfNumbers = match.group(2);
-				return Arrays.stream(listOfNumbers.split(customDelimiter)).mapToInt(Integer::parseInt).toArray();
+				return listOfNumbers.split(customDelimiter);
 			}
 		}
 		String[] tokens = stringOfNumbers.split(",|\n");
-		int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
-		return numbers;
+		return tokens;
 	}
 	
 	public int sumOfNumbers(int[] numbers) {
