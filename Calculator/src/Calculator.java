@@ -31,6 +31,14 @@ public class Calculator {
 	}
 
 	private String[] getStringTokens(String stringOfNumbers) {
+		if(stringOfNumbers.startsWith("//[")) {
+			String delimiter = getDelimiter(stringOfNumbers);
+			String numbers = stringOfNumbers.substring(5 + delimiter.length());
+			while(numbers.contains(delimiter)) {
+				numbers = numbers.replace(delimiter, "#");
+			}
+			return numbers.split("#");
+		}
 		if(stringOfNumbers.startsWith("//")) {
 			Pattern pattern = Pattern.compile("//(.)\n(.*)");
 			Matcher match = pattern.matcher(stringOfNumbers);
@@ -44,6 +52,26 @@ public class Calculator {
 		return tokens;
 	}
 	
+	private String getDelimiter(String numbers) {
+		String delimiter = "";
+		char[] chrs = numbers.toCharArray();
+		int i = 0;
+		boolean flg = false;
+		for(i = 0; i < chrs.length; i++) {
+			if(chrs[i] == '[') {
+				flg = true;
+			}
+			else if(chrs[i] == ']') {
+				flg = false;
+				break;
+			}
+			else if(flg == true) {
+				delimiter += chrs[i];
+			}
+		}
+		return delimiter;
+	}
+
 	public int sumOfNumbers(int[] numbers) {
 		int sum = 0;
 		for(int number: numbers) {
