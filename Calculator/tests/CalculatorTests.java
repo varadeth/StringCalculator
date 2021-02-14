@@ -70,6 +70,11 @@ public class CalculatorTests {
 		assertEquals(2, calculator.add("2,1002"));
 	}
 	
+	@Test
+	public void multipleLengthDelimiter() {
+		assertEquals(5, calculator.add("//[***]\n2***3"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
