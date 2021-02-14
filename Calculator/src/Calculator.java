@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Calculator {
 
@@ -10,6 +12,15 @@ public class Calculator {
 	}
 
 	private int[] convertToIntArray(String stringOfNumbers) {
+		if(stringOfNumbers.startsWith("//")) {
+			Pattern pattern = Pattern.compile("//(.)\n(.*)");
+			Matcher match = pattern.matcher(stringOfNumbers);
+			if(match.matches()) {
+				String customDelimiter = match.group(1);
+				String listOfNumbers = match.group(2);
+				return Arrays.stream(listOfNumbers.split(customDelimiter)).mapToInt(Integer::parseInt).toArray();
+			}
+		}
 		String[] tokens = stringOfNumbers.split(",|\n");
 		int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
 		return numbers;
