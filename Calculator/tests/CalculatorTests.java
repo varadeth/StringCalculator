@@ -65,6 +65,11 @@ public class CalculatorTests {
 		calculator.add("-1,2,3");
 	}
 	
+	@Test
+	public void additionWithNumberGreaterThan1000() {
+		assertEquals(2, calculator.add("2,1002"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
