@@ -28,6 +28,11 @@ public class DivisionTests {
 		assertEquals(2 ,calculator.divide("5,2"));
 	}
 	
+	@Test
+	public void divisionWithThreeNumberString() {
+		assertEquals(1 ,calculator.divide("5,2,2"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
