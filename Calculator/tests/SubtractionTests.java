@@ -19,27 +19,27 @@ public class SubtractionTests {
 	}
 
 	@Test
-	public void additionWithOneNumber() {
+	public void subtractionWithOneNumber() {
 		assertEquals(1, calculator.subtract("1"));
 	}
 	
 	@Test
-	public void additionWithTwoNumbers() {
+	public void subtractionWithTwoNumbers() {
 		assertEquals(1, calculator.subtract("2,1"));
 	}
 	
 	@Test
-	public void additionWithThreeNumber() {
+	public void subtractionWithThreeNumber() {
 		assertEquals(-6, calculator.subtract("3,4,5"));
 	}
 	
 	@Test
-	public void additionWithAnyNumber() {
+	public void subtractionWithAnyNumber() {
 		assertEquals(-19, calculator.subtract("1,2,3,4,5,6"));
 	}
 	
 	@Test
-	public void additionWithAnotherDelimiter() {
+	public void subtractionWithAnotherDelimiter() {
 		assertEquals(-1, calculator.subtract("2\n3"));
 	}
 	
