@@ -75,6 +75,11 @@ public class CalculatorTests {
 		assertEquals(5, calculator.add("//[***]\n2***3"));
 	}
 	
+	@Test
+	public void multipleDelimiters() {
+		assertEquals(6, calculator.add("//[*][%]\n1*2%3"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
