@@ -38,6 +38,11 @@ public class SubtractionTests {
 		assertEquals(-19, calculator.subtract("1,2,3,4,5,6"));
 	}
 	
+	@Test
+	public void additionWithAnotherDelimiter() {
+		assertEquals(5, calculator.subtract("2\n3"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
