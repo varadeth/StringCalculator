@@ -14,4 +14,9 @@ public class SubtractionTests {
 		calculator.subtract("");
 	}
 
+	@Test
+	public void additionWithOneNumber() {
+		calculator = new Calculator();
+		assertEquals(1, calculator.subtract("1"));
+	}
 }
