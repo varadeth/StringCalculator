@@ -48,6 +48,11 @@ public class DivisionTests {
 		assertEquals(1, calculator.divide("4\n3,1"));
 	}
 	
+	@Test
+	public void divisionWithCustomDelimiter() {
+		assertEquals(10, calculator.divide("//;\n90;9"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
