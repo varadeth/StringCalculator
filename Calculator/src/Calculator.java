@@ -43,7 +43,8 @@ public class Calculator {
 	private int divideNumbers(int[] numbers) {
 		int result = numbers[0];
 		for(int i = 1; i < numbers.length; i++) {
-			result /= numbers[i];
+			if(numbers[i] < 1000)
+				result /= numbers[i];
 		}
 		return result;
 	}
