@@ -18,6 +18,11 @@ public class DivisionTests {
 		assertEquals(0 ,calculator.divide(""));
 	}
 	
+	@Test
+	public void divisionWithOneNumberString() {
+		assertEquals(1 ,calculator.divide("1"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
