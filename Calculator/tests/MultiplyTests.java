@@ -48,6 +48,11 @@ public class MultiplyTests {
 		assertEquals(6, calculator.multiply("1,2\n3"));
 	}
 	
+	@Test
+	public void multiplyWithCustomDelimiter() {
+		assertEquals(9, calculator.multiply("//;\n1;9"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
