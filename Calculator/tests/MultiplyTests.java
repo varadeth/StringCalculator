@@ -74,6 +74,11 @@ public class MultiplyTests {
 		assertEquals(6, calculator.multiply("//[***]\n2***3"));
 	}
 	
+	@Test
+	public void multipleDelimiters() {
+		assertEquals(6, calculator.multiply("//[*][%]\n1*2%3"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
