@@ -28,6 +28,7 @@ public class Calculator {
 		}
 		if(stringOfNumbers.contains(",") || stringOfNumbers.contains("\n")) {
 			int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
+			CalculatorUtils.throwExceptionForNegetiveNumbers(numbers);
 			return this.multiplyNumbers(numbers);
 		}
 		return Integer.parseInt(stringOfNumbers);
