@@ -37,7 +37,8 @@ public class Calculator {
 	private int multiplyNumbers(int[] numbers) {
 		int result = 1;
 		for(int number: numbers) {
-			result *= number;
+			if(number < 1000)
+				result *= number;
 		}
 		return result;
 	}
