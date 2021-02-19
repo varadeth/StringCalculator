@@ -33,6 +33,10 @@ public class Calculator {
 		}
 		return Integer.parseInt(stringOfNumbers);
 	}
+	
+	public int divide(String stringOfNumbers) {
+		return 0;
+	}
 
 	private int multiplyNumbers(int[] numbers) {
 		int result = 1;
