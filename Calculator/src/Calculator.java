@@ -26,23 +26,17 @@ public class Calculator {
 		if(stringOfNumbers.equals("")) {
 			return 0;
 		}
-		if(stringOfNumbers.contains(",") || stringOfNumbers.contains("\n")) {
-			int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
-			CalculatorUtils.throwExceptionForNegetiveNumbers(numbers);
-			return this.multiplyNumbers(numbers);
-		}
-		return Integer.parseInt(stringOfNumbers);
+		int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
+		CalculatorUtils.throwExceptionForNegetiveNumbers(numbers);
+		return this.multiplyNumbers(numbers);
 	}
 	
 	public int divide(String stringOfNumbers) {
 		if(stringOfNumbers.equals("")) {
 			return 0;
 		}
-		if(stringOfNumbers.contains(",") || stringOfNumbers.contains("\n")) {
-			int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
-			return this.divideNumbers(numbers);
-		}
-		return Integer.parseInt(stringOfNumbers);
+		int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
+		return this.divideNumbers(numbers);
 	}
 
 	private int divideNumbers(int[] numbers) {
