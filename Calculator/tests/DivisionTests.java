@@ -43,6 +43,11 @@ public class DivisionTests {
 		assertEquals(0, calculator.divide("2\n3"));
 	}
 	
+	@Test
+	public void divisionWithTwoDelimiter() {
+		assertEquals(1, calculator.divide("4\n3,1"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
