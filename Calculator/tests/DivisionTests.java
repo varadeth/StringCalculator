@@ -38,6 +38,11 @@ public class DivisionTests {
 		assertEquals(1 ,calculator.divide("10,2,2,2"));
 	}
 	
+	@Test
+	public void divisionWithAnotherDelimiter() {
+		assertEquals(0, calculator.divide("2\n3"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
