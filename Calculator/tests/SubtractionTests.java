@@ -69,6 +69,16 @@ public class SubtractionTests {
 		assertEquals(2, calculator.subtract("2,1002"));
 	}
 	
+	@Test
+	public void multipleLengthDelimiter() {
+		assertEquals(5, calculator.add("//[***]\n2***3"));
+	}
+	
+	@Test
+	public void multipleDelimiters() {
+		assertEquals(6, calculator.add("//[*][%]\n1*2%3"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
