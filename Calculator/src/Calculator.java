@@ -18,10 +18,19 @@ public class Calculator {
 			return 0;
 		}
 		if(stringOfNumbers.contains(",")) {
-			String[] numbers = stringOfNumbers.split(",");
-			return Integer.parseInt(numbers[0]) - Integer.parseInt(numbers[1]);
+			String[] tokens = stringOfNumbers.split(",");
+			int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
+			return this.differenceOfNumbers(numbers);
 		}
 		return Integer.parseInt(stringOfNumbers);
+	}
+
+	private int differenceOfNumbers(int[] numbers) {
+		int diff = numbers[0];
+		for(int i=1; i < numbers.length; i++) {
+			diff -= numbers[i];
+		}
+		return diff;
 	}
 
 	private void throwExceptionForNegetiveNumbers(int[] numbers) {
