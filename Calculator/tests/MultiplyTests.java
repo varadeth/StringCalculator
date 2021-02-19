@@ -43,6 +43,11 @@ public class MultiplyTests {
 		assertEquals(6, calculator.multiply("2\n3"));
 	}
 	
+	@Test
+	public void multiplyWithCommaAndNewlineDelimiter() {
+		assertEquals(6, calculator.multiply("1,2\n3"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
