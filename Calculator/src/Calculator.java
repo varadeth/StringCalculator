@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,10 +43,19 @@ public class Calculator {
 	}
 
 	private String[] tokensFromAnyLengthDelimiter(String stringOfNumbers) {
-		String delimiter = getDelimiter(stringOfNumbers);
-		String numbers = stringOfNumbers.substring(5 + delimiter.length());
-		while(numbers.contains(delimiter)) {
-			numbers = numbers.replace(delimiter, "#");
+		ArrayList<String> delimiters = getDelimiter(stringOfNumbers);
+		int delimiterLength = 0;
+		boolean isMultipleDelimitersPresent = delimiters.size() > 1? true : false;
+		for(String delimiter: delimiters) {
+			delimiterLength += delimiter.length();
+		}
+		delimiterLength = isMultipleDelimitersPresent ? delimiterLength + 2 : delimiterLength;
+		String numbers = stringOfNumbers.substring(5 +  delimiterLength);
+		for(String delimiter: delimiters) {
+			while(numbers.contains(delimiter)) {
+				numbers = numbers.replace(delimiter, "#");
+			}
+			numbers.replace(delimiter, ""+'#');
 		}
 		return numbers.split("#");
 	}
@@ -61,8 +71,9 @@ public class Calculator {
 		return new String[] {""};
 	}
 	
-	private String getDelimiter(String numbers) {
+	private ArrayList<String> getDelimiter(String numbers) {
 		String delimiter = "";
+		ArrayList<String> delimiters = new ArrayList();
 		char[] chrs = numbers.toCharArray();
 		int i = 0;
 		boolean flg = false;
@@ -72,13 +83,14 @@ public class Calculator {
 			}
 			else if(chrs[i] == ']') {
 				flg = false;
-				break;
+				delimiters.add(delimiter);
+				delimiter = "";
 			}
 			else if(flg == true) {
 				delimiter += chrs[i];
 			}
 		}
-		return delimiter;
+		return delimiters;
 	}
 
 	public int sumOfNumbers(int[] numbers) {
