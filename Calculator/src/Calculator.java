@@ -38,6 +38,10 @@ public class Calculator {
 		if(stringOfNumbers.equals("")) {
 			return 0;
 		}
+		if(stringOfNumbers.contains(",")) {
+			String[] numbers = stringOfNumbers.split(",");
+			return Integer.parseInt(numbers[0]) / Integer.parseInt(numbers[1]);
+		}
 		return Integer.parseInt(stringOfNumbers);
 	}
 
