@@ -2,11 +2,15 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class MultiplyTests {
 
 	Calculator calculator;
+	@Rule
+	public ExpectedException exceptionRule = ExpectedException.none();
 	
 	@Before
 	public void setup() { 
@@ -51,6 +55,13 @@ public class MultiplyTests {
 	@Test
 	public void multiplyWithCustomDelimiter() {
 		assertEquals(9, calculator.multiply("//;\n1;9"));
+	}
+	
+	@Test
+	public void checkIfExceptionOccurred() {
+		exceptionRule.expect(RuntimeException.class);
+		exceptionRule.expectMessage("Negetive number not allowed : -1");
+		calculator.multiply("-1,2,3");
 	}
 	
 	@After
