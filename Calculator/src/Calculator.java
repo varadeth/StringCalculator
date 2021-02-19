@@ -14,7 +14,10 @@ public class Calculator {
 	}
 	
 	public int subtract(String stringOfNumbers) { 
-		return 0;
+		if(stringOfNumbers.equals("")) {
+			return 0;
+		}
+		return Integer.parseInt(stringOfNumbers);
 	}
 
 	private void throwExceptionForNegetiveNumbers(int[] numbers) {
