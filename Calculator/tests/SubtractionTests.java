@@ -40,7 +40,7 @@ public class SubtractionTests {
 	
 	@Test
 	public void additionWithAnotherDelimiter() {
-		assertEquals(5, calculator.subtract("2\n3"));
+		assertEquals(-1, calculator.subtract("2\n3"));
 	}
 	
 	@After
