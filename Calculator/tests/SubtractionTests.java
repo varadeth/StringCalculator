@@ -63,6 +63,11 @@ public class SubtractionTests {
 		exceptionRule.expectMessage("Negetive number not allowed : -1");
 		calculator.subtract("-1,2,3");
 	}
+
+	@Test
+	public void subtractionWithNumberGreaterThan1000() {
+		assertEquals(2, calculator.subtract("2,1002"));
+	}
 	
 	@After
 	public void tearDown() {
