@@ -38,7 +38,7 @@ public class Calculator {
 		if(stringOfNumbers.equals("")) {
 			return 0;
 		}
-		if(stringOfNumbers.contains(",")) {
+		if(stringOfNumbers.contains(",") || stringOfNumbers.contains("\n")) {
 			int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
 			return this.divideNumbers(numbers);
 		}
