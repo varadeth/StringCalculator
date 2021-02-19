@@ -74,6 +74,11 @@ public class DivisionTests {
 		assertEquals(5, calculator.divide("//[***]\n15***3"));
 	}
 	
+	@Test
+	public void multipleDelimiters() {
+		assertEquals(1, calculator.divide("//[*][%]\n4*2%2"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
