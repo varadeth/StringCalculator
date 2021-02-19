@@ -23,6 +23,11 @@ public class DivisionTests {
 		assertEquals(1 ,calculator.divide("1"));
 	}
 	
+	@Test
+	public void divisionWithTwoNumberString() {
+		assertEquals(2 ,calculator.divide("5,2"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
