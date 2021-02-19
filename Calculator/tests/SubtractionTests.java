@@ -45,7 +45,7 @@ public class SubtractionTests {
 	
 	@Test
 	public void subtractionWithCommaAndNewlineDelimiter() {
-		assertEquals(6, calculator.subtract("1,2\n3"));
+		assertEquals(-4, calculator.subtract("1,2\n3"));
 	}
 	
 	@After
