@@ -21,6 +21,10 @@ public class Calculator {
 		CalculatorUtils.throwExceptionForNegetiveNumbers(numbers);
 		return this.differenceOfNumbers(numbers);
 	}
+	
+	public int multiply(String stringOfNumbers) {
+		return 0;
+	}
 
 	private int differenceOfNumbers(int[] numbers) {
 		int diff = numbers[0];
