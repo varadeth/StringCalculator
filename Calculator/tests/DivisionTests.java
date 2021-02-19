@@ -64,6 +64,11 @@ public class DivisionTests {
 		calculator.divide("-1,2,3");
 	}
 	
+	@Test
+	public void divideWithNumberGreaterThan1000() {
+		assertEquals(2, calculator.divide("2,1002"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
