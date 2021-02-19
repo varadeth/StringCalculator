@@ -36,6 +36,7 @@ public class Calculator {
 			return 0;
 		}
 		int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
+		CalculatorUtils.throwExceptionForNegetiveNumbers(numbers);
 		return this.divideNumbers(numbers);
 	}
 
