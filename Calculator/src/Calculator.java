@@ -23,7 +23,10 @@ public class Calculator {
 	}
 	
 	public int multiply(String stringOfNumbers) {
-		return 0;
+		if(stringOfNumbers.equals("")) {
+			return 0;
+		}
+		return Integer.parseInt(stringOfNumbers);
 	}
 
 	private int differenceOfNumbers(int[] numbers) {
