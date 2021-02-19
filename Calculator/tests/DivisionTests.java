@@ -33,6 +33,11 @@ public class DivisionTests {
 		assertEquals(1 ,calculator.divide("5,2,2"));
 	}
 	
+	@Test
+	public void divisionWithAnyNumberString() {
+		assertEquals(1 ,calculator.divide("10,2,2,2"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
