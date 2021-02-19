@@ -19,4 +19,10 @@ public class SubtractionTests {
 		calculator = new Calculator();
 		assertEquals(1, calculator.subtract("1"));
 	}
+	
+	@Test
+	public void additionWithTwoNumbers() {
+		calculator = new Calculator();
+		assertEquals(1, calculator.subtract("2,1"));
+	}
 }
