@@ -48,6 +48,11 @@ public class SubtractionTests {
 		assertEquals(-4, calculator.subtract("1,2\n3"));
 	}
 	
+	@Test
+	public void subtractionWithCustomDelimiter() {
+		assertEquals(-8, calculator.subtract("//;\n1;9"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
