@@ -28,6 +28,11 @@ public class MultiplyTests {
 		assertEquals(20, calculator.multiply("2,10"));
 	}
 	
+	@Test
+	public void multipleWithThreeNumber() {
+		assertEquals(40, calculator.multiply("2,10, 2"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
