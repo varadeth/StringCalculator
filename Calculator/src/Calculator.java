@@ -39,10 +39,18 @@ public class Calculator {
 			return 0;
 		}
 		if(stringOfNumbers.contains(",")) {
-			String[] numbers = stringOfNumbers.split(",");
-			return Integer.parseInt(numbers[0]) / Integer.parseInt(numbers[1]);
+			int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
+			return this.divideNumbers(numbers);
 		}
 		return Integer.parseInt(stringOfNumbers);
+	}
+
+	private int divideNumbers(int[] numbers) {
+		int result = numbers[0];
+		for(int i = 1; i < numbers.length; i++) {
+			result /= numbers[i];
+		}
+		return result;
 	}
 
 	private int multiplyNumbers(int[] numbers) {
