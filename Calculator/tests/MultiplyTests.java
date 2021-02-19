@@ -23,6 +23,11 @@ public class MultiplyTests {
 		assertEquals(10, calculator.multiply("10"));
 	}
 	
+	@Test
+	public void multipleWithTwoNumber() {
+		assertEquals(20, calculator.multiply("2,10"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
