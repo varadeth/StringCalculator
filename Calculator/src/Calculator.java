@@ -12,6 +12,10 @@ public class Calculator {
 		throwExceptionForNegetiveNumbers(numbers);
 		return this.sumOfNumbers(numbers);
 	}
+	
+	public int subtract(String stringOfNumbers) { 
+		return 0;
+	}
 
 	private void throwExceptionForNegetiveNumbers(int[] numbers) {
 		String negetiveNumbers = "";
