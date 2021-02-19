@@ -40,7 +40,7 @@ public class MultiplyTests {
 	
 	@Test
 	public void multiplyWithAnotherDelimiter() {
-		assertEquals(5, calculator.multiply("2\n3"));
+		assertEquals(6, calculator.multiply("2\n3"));
 	}
 	
 	@After
