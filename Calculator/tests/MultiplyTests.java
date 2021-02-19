@@ -38,6 +38,11 @@ public class MultiplyTests {
 		assertEquals(720, calculator.multiply("2,3,4,5,6"));
 	}
 	
+	@Test
+	public void multiplyWithAnotherDelimiter() {
+		assertEquals(5, calculator.multiply("2\n3"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
