@@ -20,6 +20,6 @@ public class MultiplyTests {
 	
 	@After
 	public void tearDown() {
-		
+		calculator = null;
 	}
 }
