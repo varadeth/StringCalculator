@@ -69,6 +69,11 @@ public class MultiplyTests {
 		assertEquals(2, calculator.multiply("2,1002"));
 	}
 	
+	@Test
+	public void multipleLengthDelimiter() {
+		assertEquals(6, calculator.multiply("//[***]\n2***3"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
