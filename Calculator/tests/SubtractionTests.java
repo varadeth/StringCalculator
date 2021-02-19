@@ -8,21 +8,28 @@ public class SubtractionTests {
 
 	Calculator calculator;
 	
+	@Before
+	public void setup() {
+		calculator = new Calculator();
+	}
+	
 	@Test
 	public void test() {
-		calculator = new Calculator();
 		calculator.subtract("");
 	}
 
 	@Test
 	public void additionWithOneNumber() {
-		calculator = new Calculator();
 		assertEquals(1, calculator.subtract("1"));
 	}
 	
 	@Test
 	public void additionWithTwoNumbers() {
-		calculator = new Calculator();
 		assertEquals(1, calculator.subtract("2,1"));
+	}
+	
+	@After
+	public void tearDown() {
+		calculator = null;
 	}
 }
