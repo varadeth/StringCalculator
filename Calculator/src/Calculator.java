@@ -44,20 +44,34 @@ public class Calculator {
 
 	private String[] tokensFromAnyLengthDelimiter(String stringOfNumbers) {
 		ArrayList<String> delimiters = getDelimiter(stringOfNumbers);
+		int delimiterLength = getDelimiterLength(delimiters);
+		String numbers = getNumbersFromString(stringOfNumbers, delimiterLength);
+		numbers = replaceDelimiterByHash(delimiters, numbers);
+		return numbers.split("#");
+	}
+
+	private int getDelimiterLength(ArrayList<String> delimiters) {
 		int delimiterLength = 0;
 		boolean isMultipleDelimitersPresent = delimiters.size() > 1? true : false;
 		for(String delimiter: delimiters) {
 			delimiterLength += delimiter.length();
 		}
 		delimiterLength = isMultipleDelimitersPresent ? delimiterLength + 2 : delimiterLength;
-		String numbers = stringOfNumbers.substring(5 +  delimiterLength);
+		return delimiterLength;
+	}
+
+	private String getNumbersFromString(String stringOfNumbers, int delimiterLength) {
+		return stringOfNumbers.substring(5 +  delimiterLength);
+	}
+
+	private String replaceDelimiterByHash(ArrayList<String> delimiters, String numbers) {
 		for(String delimiter: delimiters) {
 			while(numbers.contains(delimiter)) {
 				numbers = numbers.replace(delimiter, "#");
 			}
 			numbers.replace(delimiter, ""+'#');
 		}
-		return numbers.split("#");
+		return numbers;
 	}
 
 	private String[] tokenFromAnyDelimiter(String stringOfNumbers) {
