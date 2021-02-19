@@ -35,7 +35,10 @@ public class Calculator {
 	}
 	
 	public int divide(String stringOfNumbers) {
-		return 0;
+		if(stringOfNumbers.equals("")) {
+			return 0;
+		}
+		return Integer.parseInt(stringOfNumbers);
 	}
 
 	private int multiplyNumbers(int[] numbers) {
