@@ -33,6 +33,11 @@ public class SubtractionTests {
 		assertEquals(-6, calculator.subtract("3,4,5"));
 	}
 	
+	@Test
+	public void additionWithAnyNumber() {
+		assertEquals(-19, calculator.subtract("1,2,3,4,5,6"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
