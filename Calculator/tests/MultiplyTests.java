@@ -64,6 +64,11 @@ public class MultiplyTests {
 		calculator.multiply("-1,2,3");
 	}
 	
+	@Test
+	public void multiplyWithNumberGreaterThan1000() {
+		assertEquals(2, calculator.multiply("2,1002"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
