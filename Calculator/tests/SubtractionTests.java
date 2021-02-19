@@ -61,22 +61,7 @@ public class SubtractionTests {
 	public void checkIfExceptionOccurred() {
 		exceptionRule.expect(RuntimeException.class);
 		exceptionRule.expectMessage("Negetive number not allowed : -1");
-		calculator.add("-1,2,3");
-	}
-	
-	@Test
-	public void additionWithNumberGreaterThan1000() {
-		assertEquals(2, calculator.add("2,1002"));
-	}
-	
-	@Test
-	public void multipleLengthDelimiter() {
-		assertEquals(5, calculator.add("//[***]\n2***3"));
-	}
-	
-	@Test
-	public void multipleDelimiters() {
-		assertEquals(6, calculator.add("//[*][%]\n1*2%3"));
+		calculator.subtract("-1,2,3");
 	}
 	
 	@After
