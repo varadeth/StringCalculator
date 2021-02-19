@@ -69,6 +69,11 @@ public class DivisionTests {
 		assertEquals(2, calculator.divide("2,1002"));
 	}
 	
+	@Test
+	public void multipleLengthDelimiter() {
+		assertEquals(5, calculator.divide("//[***]\n15***3"));
+	}
+	
 	@After()
 	public void tearDown() {
 		calculator = null;
