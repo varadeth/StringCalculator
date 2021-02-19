@@ -33,6 +33,11 @@ public class MultiplyTests {
 		assertEquals(40, calculator.multiply("2,10,2"));
 	}
 	
+	@Test
+	public void multiplyWithAnyNumber() {
+		assertEquals(720, calculator.multiply("2,3,4,5,6"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
