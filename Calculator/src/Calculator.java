@@ -25,7 +25,8 @@ public class Calculator {
 	private int differenceOfNumbers(int[] numbers) {
 		int diff = numbers[0];
 		for(int i=1; i < numbers.length; i++) {
-			diff -= numbers[i];
+			if(numbers[i] < 1000) 
+				diff -= numbers[i];
 		}
 		return diff;
 	}
