@@ -3,7 +3,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ AdditionTests.class, SubtractionTests.class, MultiplyTests.class })
+@SuiteClasses({ AdditionTests.class, SubtractionTests.class, MultiplyTests.class, DivisionTests.class })
 public class AllTests {
 
 }
