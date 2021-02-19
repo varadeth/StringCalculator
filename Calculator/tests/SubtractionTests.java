@@ -71,12 +71,12 @@ public class SubtractionTests {
 	
 	@Test
 	public void multipleLengthDelimiter() {
-		assertEquals(5, calculator.add("//[***]\n2***3"));
+		assertEquals(-1, calculator.subtract("//[***]\n2***3"));
 	}
 	
 	@Test
 	public void multipleDelimiters() {
-		assertEquals(6, calculator.add("//[*][%]\n1*2%3"));
+		assertEquals(-4, calculator.subtract("//[*][%]\n1*2%3"));
 	}
 	
 	@After
