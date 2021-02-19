@@ -17,12 +17,8 @@ public class Calculator {
 		if(stringOfNumbers.equals("")) {
 			return 0;
 		}
-		if(stringOfNumbers.contains(",") || stringOfNumbers.contains("\n")) {
-			String[] tokens = stringOfNumbers.split(",|\n");
-			int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
-			return this.differenceOfNumbers(numbers);
-		}
-		return Integer.parseInt(stringOfNumbers);
+		int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
+		return this.differenceOfNumbers(numbers);
 	}
 
 	private int differenceOfNumbers(int[] numbers) {
