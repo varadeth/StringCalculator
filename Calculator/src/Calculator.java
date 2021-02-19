@@ -27,8 +27,7 @@ public class Calculator {
 			return 0;
 		}
 		if(stringOfNumbers.contains(",") || stringOfNumbers.contains("\n")) {
-			String[] tokens = stringOfNumbers.split(",|\n");
-			int[] numbers = Arrays.stream(tokens).mapToInt(Integer::parseInt).toArray();
+			int[] numbers = CalculatorUtils.convertToIntArray(stringOfNumbers);
 			return this.multiplyNumbers(numbers);
 		}
 		return Integer.parseInt(stringOfNumbers);
