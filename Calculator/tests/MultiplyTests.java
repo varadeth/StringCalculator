@@ -18,6 +18,11 @@ public class MultiplyTests {
 		assertEquals(0, calculator.multiply(""));
 	}
 	
+	@Test
+	public void multipleWithOneNumber() {
+		assertEquals(10, calculator.multiply("10"));
+	}
+	
 	@After
 	public void tearDown() {
 		calculator = null;
