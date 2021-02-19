@@ -2,11 +2,15 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class SubtractionTests {
 
 	Calculator calculator;
+	@Rule
+	public ExpectedException exceptionRule = ExpectedException.none();
 	
 	@Before
 	public void setup() {
@@ -51,6 +55,28 @@ public class SubtractionTests {
 	@Test
 	public void subtractionWithCustomDelimiter() {
 		assertEquals(-8, calculator.subtract("//;\n1;9"));
+	}
+	
+	@Test
+	public void checkIfExceptionOccurred() {
+		exceptionRule.expect(RuntimeException.class);
+		exceptionRule.expectMessage("Negetive number not allowed : -1");
+		calculator.add("-1,2,3");
+	}
+	
+	@Test
+	public void additionWithNumberGreaterThan1000() {
+		assertEquals(2, calculator.add("2,1002"));
+	}
+	
+	@Test
+	public void multipleLengthDelimiter() {
+		assertEquals(5, calculator.add("//[***]\n2***3"));
+	}
+	
+	@Test
+	public void multipleDelimiters() {
+		assertEquals(6, calculator.add("//[*][%]\n1*2%3"));
 	}
 	
 	@After
