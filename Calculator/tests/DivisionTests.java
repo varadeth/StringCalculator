@@ -2,11 +2,15 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class DivisionTests {
 
 	Calculator calculator;
+	@Rule
+	public ExpectedException exceptionRule = ExpectedException.none();
 	
 	@Before()
 	public void setup() {
@@ -51,6 +55,13 @@ public class DivisionTests {
 	@Test
 	public void divisionWithCustomDelimiter() {
 		assertEquals(10, calculator.divide("//;\n90;9"));
+	}
+
+	@Test
+	public void checkIfExceptionOccurred() {
+		exceptionRule.expect(RuntimeException.class);
+		exceptionRule.expectMessage("Negetive number not allowed : -1");
+		calculator.divide("-1,2,3");
 	}
 	
 	@After()
