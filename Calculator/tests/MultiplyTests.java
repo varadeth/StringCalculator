@@ -30,7 +30,7 @@ public class MultiplyTests {
 	
 	@Test
 	public void multipleWithThreeNumber() {
-		assertEquals(40, calculator.multiply("2,10, 2"));
+		assertEquals(40, calculator.multiply("2,10,2"));
 	}
 	
 	@After
